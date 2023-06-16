@@ -82,11 +82,11 @@ export function generateDebugProfiles(azPipelinesTask: AzPipelinesTask): AzTaskD
             return;
         }
 
-        if (!taskDefinition[x].Node) {
+        if (!taskDefinition[x].Node10) {
             throw new Error(`Unsupported execution type, expected type Node, but found: ${Object.keys(azPipelinesTask.taskDefinition.execution)}`);
         }
 
-        profiles.push(generateDebugProfile(`${azPipelinesTask.taskName}-${x}`, taskDefinition[x].Node, azPipelinesTask));
+        profiles.push(generateDebugProfile(`${azPipelinesTask.taskName}-${x}`, taskDefinition[x].Node10, azPipelinesTask));
 
     }); 
 
